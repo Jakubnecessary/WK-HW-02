@@ -11,7 +11,7 @@ class TestRoom(unittest.TestCase):
         self.songs = [self.first_song]
         self.first_guest = Guest("Juan", 26)
         self.second_guest = Guest("John", 26)
-        self.guests = [self.first_guest,self.second_guest]
+        self.guests = [self.first_guest, self.second_guest]
 
     def test_room_has_name(self):
         self.assertEqual("First", self.room.room_name)
@@ -24,6 +24,14 @@ class TestRoom(unittest.TestCase):
         self.room.add_song_to_room(self.first_song)
         self.assertEqual(1, self.room.number_of_songs())
 
+    def test_check_in_single(self):
+        self.room.check_in(self.first_guest)
+        
+        self.assertEqual(1, self.room.number_of_guests())
+# Ask why 1 not 2 since u got 2 in a self.guests.
+    def test_check_in_multiple_guests(self):
+        self.room.check_in(self.guests)
+        self.assertEqual(1, self.room.number_of_guests())
 
     
 
