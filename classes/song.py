@@ -1,8 +1,8 @@
 class Song:
-    def __init__(self, title, artist_name):
+    def __init__(self, title, genre, artist_name):
         self.title = title
         self.artist_name = artist_name
-        self.songs = []
+        self.genre = genre
+        
 
-    def create_song(self, song):
-        self.songs.append(song)
+

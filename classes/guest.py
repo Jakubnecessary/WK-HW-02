@@ -7,4 +7,5 @@ class Guest:
     def create_guest(self, guest):
         self.guests.append(guest)
 
+
     
