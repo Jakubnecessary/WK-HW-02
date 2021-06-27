@@ -2,12 +2,16 @@ import unittest
 
 from classes.room import *
 from classes.song import *
+from classes.guest import *
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room("First")
         self.first_song = Song("Sad But True", "Metallica", "Metal")
         self.songs = [self.first_song]
+        self.first_guest = Guest("Juan", 26)
+        self.second_guest = Guest("John", 26)
+        self.guests = [self.first_guest,self.second_guest]
 
     def test_room_has_name(self):
         self.assertEqual("First", self.room.room_name)
@@ -19,3 +23,7 @@ class TestRoom(unittest.TestCase):
     def test_add_song_to_room(self):
         self.room.add_song_to_room(self.first_song)
         self.assertEqual(1, self.room.number_of_songs())
+
+
+    
+
