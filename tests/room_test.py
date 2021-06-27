@@ -28,10 +28,17 @@ class TestRoom(unittest.TestCase):
         self.room.check_in(self.first_guest)
         
         self.assertEqual(1, self.room.number_of_guests())
-# Ask why 1 not 2 since u got 2 in a self.guests.
+# Ask why 1 not 2 since u got 2 in a self.guests. Fixed it no need to ask
     def test_check_in_multiple_guests(self):
-        self.room.check_in(self.guests)
-        self.assertEqual(1, self.room.number_of_guests())
+        self.room.check_in_multiple_guests(self.guests)
+        self.assertEqual(2, self.room.number_of_guests())
+
+    def test_check_out(self):
+        self.room.check_in(self.first_guest)
+        self.room.check_out(self.first_guest)
+        self.assertEqual(0, self.room.number_of_guests())
+
+
 
     
 

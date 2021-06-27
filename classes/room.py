@@ -1,9 +1,11 @@
 class Room:
-    def __init__(self, room_name):
+    def __init__(self, room_name, cap, fee):
         self.room_name = room_name
         self.rooms = []
         self.songs = []
         self.guests = []
+        self.cap = cap
+        self.fee = fee
 
     def create_room(self, room):
         self.rooms.append(room)
@@ -23,3 +25,6 @@ class Room:
     def check_in_multiple_guests(self, guests):
         for guest in guests:
             self.check_in(guest)
+
+    def check_out(self, guest):
+        self.guests.remove(guest)
